@@ -3,7 +3,7 @@ import { Text } from "@chakra-ui/layout";
 
 type Props = {
   text: string;
-  onClick?: () => void;
+  onClick: (() => void) | undefined;
 };
 
 export const PopupText: VFC<Props> = ({ text, onClick }) => {

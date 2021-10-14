@@ -1,9 +1,9 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../app/store";
 
 const initialState = {
-  username: "",
-  password: "",
+  isOpenLogin: false,
+  isOpenRegister: false,
 };
 
 export const loginSlice = createSlice({
@@ -11,17 +11,30 @@ export const loginSlice = createSlice({
   initialState,
 
   reducers: {
-    setUsername: (state, action: PayloadAction<string>) => {
-      state.username = action.payload;
+    setIsOpenLogin: (state) => {
+      state.isOpenLogin = true;
     },
-    setPassword: (state, action: PayloadAction<string>) => {
-      state.password = action.payload;
+    resetIsOpenLogin: (state) => {
+      state.isOpenLogin = false;
+    },
+    setIsOpenRegister: (state) => {
+      state.isOpenRegister = true;
+    },
+    resetIsOpenRegister: (state) => {
+      state.isOpenRegister = false;
     },
   },
 });
 
-export const { setPassword, setUsername } = loginSlice.actions;
+export const {
+  setIsOpenLogin,
+  resetIsOpenLogin,
+  setIsOpenRegister,
+  resetIsOpenRegister,
+} = loginSlice.actions;
 
-export const selectUsername = (state: RootState) => state.login.username;
+export const selectIsLogin = (state: RootState) => state.login.isOpenLogin;
+export const selectIsRegister = (state: RootState) =>
+  state.login.isOpenRegister;
 
 export default loginSlice.reducer;

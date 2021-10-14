@@ -1,7 +1,6 @@
 import { VFC } from "react";
 import { useNavigate } from "react-router";
-import { Box, Flex, Stack, Text } from "@chakra-ui/layout";
-import { Button } from "@chakra-ui/button";
+import { Box, Flex, Text } from "@chakra-ui/layout";
 import { IconButton } from "@chakra-ui/button";
 import { useDisclosure } from "@chakra-ui/hooks";
 import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
@@ -10,21 +9,15 @@ import { Collapse } from "@chakra-ui/transition";
 import { BsApple } from "react-icons/bs";
 import { Icon } from "@chakra-ui/icon";
 import { PopWithPhoto } from "../../molecules/PopWithPhoto";
+import styles from "./Header.module.css";
 
 export const Header: VFC = () => {
-  const username: string = localStorage.username;
   const navigate = useNavigate();
-
-  const logout = () => {
-    localStorage.removeItem("username");
-    localStorage.removeItem("password");
-    navigate("/");
-  };
   const { isOpen, onToggle } = useDisclosure();
 
   return (
     <>
-      <Box>
+      <Box className={styles.Nav}>
         <Flex
           color="gray.600"
           bg="gray.50"
