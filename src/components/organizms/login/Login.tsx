@@ -11,10 +11,8 @@ import {
   Link,
   Button,
 } from "@chakra-ui/react";
-import { VFC, useState } from "react";
+import { VFC } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { useAppDispatch } from "../../app/hooks";
-import { setPassword, setUsername } from "../../features/loginSlice";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { useNavigate } from "react-router-dom";
@@ -41,7 +39,7 @@ export const Login: VFC = () => {
   const onSubmit: SubmitHandler<IFormInput> = (data) => {
     localStorage.setItem("username", data.username);
     localStorage.setItem("password", data.password);
-    navigate("/main");
+    navigate("/posts");
   };
 
   return (
