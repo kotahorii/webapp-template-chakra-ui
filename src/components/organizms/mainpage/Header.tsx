@@ -17,7 +17,7 @@ export const Header: VFC = () => {
 
   return (
     <>
-      <Box className={styles.Nav}>
+      <Box className={styles.Nav} zIndex="1">
         <Flex
           color="gray.600"
           bg="gray.50"
