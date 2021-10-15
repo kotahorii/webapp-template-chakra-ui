@@ -56,10 +56,11 @@ export const PopWithPhoto: VFC = () => {
           <Avatar
             cursor="pointer"
             src={userProf}
+            boxShadow="sm"
             _hover={{ boxShadow: "lg" }}
           />
         </PopoverTrigger>
-        <PopoverContent _focus={{ boxShadow: "none" }} w="200px" boxShadow="lg">
+        <PopoverContent _focus={{ boxShadow: "none" }} w="200px">
           <PopoverBody>
             <Flex direction="column" spacing="5" align="flex-start">
               {username?.length

@@ -56,7 +56,7 @@ export const Header: VFC = () => {
               fontWeight="bold"
               cursor="pointer"
               onClick={() => {
-                navigate("/");
+                navigate("/posts");
               }}
             >
               <Icon as={BsApple} _hover={{ opacity: "0.8" }} w={8} h={8} />

@@ -4,6 +4,7 @@ import { Login } from "./components/organizms/login/Login";
 import { MainPage } from "./components/pages/MainPage";
 import { Posts } from "./components/pages/Posts";
 import { SelfProfile } from "./components/pages/SelfProfile";
+import { StartPage } from "./components/pages/StartPage";
 
 const App: VFC = () => {
   return (
@@ -11,6 +12,7 @@ const App: VFC = () => {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/" element={<MainPage />}>
+          <Route path="/" element={<StartPage />} />
           <Route path="posts/" element={<Posts />} />
           <Route path="myprof/" element={<SelfProfile />} />
         </Route>
