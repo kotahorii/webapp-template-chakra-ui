@@ -50,7 +50,7 @@ export const Header: VFC = () => {
           </Flex>
           <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
             <Text
-              textAlign={{ base: "center", md: "left" }}
+              textAlign={{ base: "center", lg: "left" }}
               fontFamily="heading"
               color="gray.800"
               fontWeight="bold"
