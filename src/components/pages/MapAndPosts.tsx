@@ -49,12 +49,7 @@ export const MapAndPosts: VFC = () => {
       <Container maxW="10xl">
         <Stack direction={{ lg: "row", base: "column" }} spacing="8">
           <Stack flex="1" spacing="5">
-            <Stack
-              direction="row"
-              spacing="4"
-              className={styles.Map}
-              zIndex="1"
-            >
+            <Stack direction="row" spacing="4" className={styles.Map}>
               <Input
                 placeholder="Enter the address"
                 type="text"
