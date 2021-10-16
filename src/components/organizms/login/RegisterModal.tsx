@@ -67,14 +67,22 @@ export const RegisterModal: VFC = () => {
               <Stack spacing="4">
                 <FormControl>
                   <FormLabel>Username</FormLabel>
-                  <Input type="text" {...register("username")} />
+                  <Input
+                    variant="flushed"
+                    type="text"
+                    {...register("username")}
+                  />
                   <Text pt="2" color="pink.400">
                     {errors.username?.message}
                   </Text>
                 </FormControl>
                 <FormControl>
                   <FormLabel>Password</FormLabel>
-                  <Input type="password" {...register("password")} />
+                  <Input
+                    variant="flushed"
+                    type="password"
+                    {...register("password")}
+                  />
                   <Text pt="2" color="pink.400">
                     {errors.password?.message}
                   </Text>
