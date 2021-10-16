@@ -11,7 +11,7 @@ export const MainPage = () => {
       <Header />
       <LoginModal />
       <RegisterModal />
-      <Flex h="100%" bg="gray.50" color="gray.600" p="8">
+      <Flex h="100%" w="100%" bg="gray.50" color="gray.600" p="8">
         <Outlet />
       </Flex>
     </>
