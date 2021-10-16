@@ -1,9 +1,10 @@
-import { VFC } from "react";
+import { VFC, useState } from "react";
 import { Popover, PopoverBody, PopoverTrigger } from "@chakra-ui/popover";
 import { Avatar } from "@chakra-ui/avatar";
 import { PopoverContent } from "@chakra-ui/react";
 import { Flex } from "@chakra-ui/layout";
 import { PopupText } from "./PopupText";
+
 import { useNavigate } from "react-router";
 import { useAppDispatch } from "../../app/hooks";
 import {
@@ -17,6 +18,7 @@ export const PopWithPhoto: VFC = () => {
   const username: string = localStorage.username;
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
+
   const BEFORE_LOGIN = [
     {
       text: "登録",
@@ -36,6 +38,18 @@ export const PopWithPhoto: VFC = () => {
   ];
 
   const AFTER_LOGIN = [
+    {
+      text: "マップで検索",
+      onClick: () => {
+        navigate("/map");
+      },
+    },
+    {
+      text: "投稿一覧",
+      onClick: () => {
+        navigate("/posts");
+      },
+    },
     {
       text: "ログアウト",
       onClick: () => {
