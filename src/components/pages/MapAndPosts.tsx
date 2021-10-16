@@ -52,7 +52,7 @@ export const MapAndPosts: VFC = () => {
           <Stack
             flex="1"
             direction="column"
-            w={{ md: "50%", base: "100%" }}
+            w={{ lg: "50%", base: "100%" }}
             spacing="5"
           >
             <Stack
@@ -71,6 +71,7 @@ export const MapAndPosts: VFC = () => {
                 onChange={handleChangePlace}
               />
               <Button
+                boxShadow="md"
                 bg="blue.300"
                 color="white"
                 _hover={{ bg: "blue.400" }}
@@ -88,10 +89,10 @@ export const MapAndPosts: VFC = () => {
                   key={i}
                   borderTop="solid 0.1px"
                   borderColor="gray.200"
+                  pt="5"
                   h="100%"
-                  p="5"
                 >
-                  <Box boxSize={{ md: "xs", base: "md" }} minH="320px">
+                  <Box boxSize={{ md: "2xs", base: "xs" }} minW="256px">
                     <Image
                       borderRadius="10"
                       bgSize="covers"
@@ -102,15 +103,26 @@ export const MapAndPosts: VFC = () => {
                       src="https://yuu01.jp/wp-content/uploads/2021/03/sOSXyDGZ_400x400.jpg"
                     />
                   </Box>
-                  <Text
-                    fontWeight="bold"
-                    overflow="hidden"
-                    textOverflow="ellipsis"
-                    whiteSpace="nowrap"
-                    w="100%"
+                  <Stack
+                    direction="column"
+                    w={{ md: "70%", base: "100%" }}
+                    spacing="5"
+                    px="5"
                   >
-                    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                  </Text>
+                    <Heading
+                      fontSize="24px"
+                      fontWeight="bold"
+                      overflow="hidden"
+                      textOverflow="ellipsis"
+                      whiteSpace="nowrap"
+                      w="100%"
+                    >
+                      aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                    </Heading>
+                    <Text>
+                      aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                    </Text>
+                  </Stack>
                 </Stack>
               ))}
           </Stack>
