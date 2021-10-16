@@ -56,6 +56,7 @@ export const MapAndPosts: VFC = () => {
             spacing="5"
           >
             <Stack
+              zIndex={1}
               direction="row"
               spacing="4"
               className={styles.SearchBar}
@@ -84,6 +85,8 @@ export const MapAndPosts: VFC = () => {
               .map((_, i) => i)
               .map((i) => (
                 <Stack
+                  _hover={{ opacity: "0.85" }}
+                  cursor="pointer"
                   direction={{ md: "row", base: "column" }}
                   w="100%"
                   key={i}
