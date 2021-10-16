@@ -1,9 +1,11 @@
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
 import loginReducer from "../features/loginSlice";
+import mapReducer from "../features/mapSlice";
 
 export const store = configureStore({
   reducer: {
     login: loginReducer,
+    map: mapReducer,
   },
 });
 
