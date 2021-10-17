@@ -58,8 +58,7 @@ export const PostModal: VFC = () => {
   };
 
   const filetypeList = ["jpg", "jpeg", "JPEG", "JPG", "png", "PNG"];
-  const fileType = filetypeList.indexOf(image?.name.split(".")[1]!);
-  const invalidType = fileType === -1;
+  const validFiletype = filetypeList.includes(image?.name.split(".")[1]!);
 
   return (
     <>
@@ -125,7 +124,7 @@ export const PostModal: VFC = () => {
                     </Stack>
                     <Flex>
                       <Button
-                        disabled={invalidType || !image}
+                        disabled={!validFiletype}
                         isLoading={isSubmitting}
                         type="submit"
                         color="white"
