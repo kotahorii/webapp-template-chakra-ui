@@ -8,6 +8,7 @@ import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 import { BrowserRouter } from "react-router-dom";
+import { AnimateSharedLayout } from "framer-motion";
 
 const queryClient = new QueryClient();
 const theme = extendTheme({
@@ -25,9 +26,11 @@ ReactDOM.render(
     <ChakraProvider theme={theme}>
       <QueryClientProvider client={queryClient}>
         <Provider store={store}>
-          <BrowserRouter>
-            <App />
-          </BrowserRouter>
+          <AnimateSharedLayout type="crossfade">
+            <BrowserRouter>
+              <App />
+            </BrowserRouter>
+          </AnimateSharedLayout>
         </Provider>
         <ReactQueryDevtools />
       </QueryClientProvider>
@@ -36,7 +39,4 @@ ReactDOM.render(
   document.getElementById("root")
 );
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();

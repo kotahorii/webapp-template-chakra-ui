@@ -6,6 +6,7 @@ import { Button } from "@chakra-ui/button";
 import { Box, Container, Flex, Heading, Stack, Text } from "@chakra-ui/layout";
 import styles from "./MapAndPosts.module.css";
 import { Image } from "@chakra-ui/image";
+import { LikeButtonWithCount } from "../molecules/LikeButtonWithCount";
 
 export const MapAndPosts: VFC = () => {
   const [place, setPlace] = useState("");
@@ -125,6 +126,15 @@ export const MapAndPosts: VFC = () => {
                     <Text>
                       aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
                     </Text>
+
+                    <Flex
+                      justify="flex-end"
+                      direction="column"
+                      pt="-10"
+                      h="100px"
+                    >
+                      <LikeButtonWithCount />
+                    </Flex>
                   </Stack>
                 </Stack>
               ))}

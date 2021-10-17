@@ -1,4 +1,4 @@
-import { VFC, useState } from "react";
+import { VFC } from "react";
 import { Popover, PopoverBody, PopoverTrigger } from "@chakra-ui/popover";
 import { Avatar } from "@chakra-ui/avatar";
 import { PopoverContent } from "@chakra-ui/react";
@@ -48,6 +48,12 @@ export const PopWithPhoto: VFC = () => {
       text: "投稿一覧",
       onClick: () => {
         navigate("/posts");
+      },
+    },
+    {
+      text: "投稿する",
+      onClick: () => {
+        
       },
     },
     {

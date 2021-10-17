@@ -4,7 +4,6 @@ import { Box, Flex, Text } from "@chakra-ui/layout";
 import { IconButton } from "@chakra-ui/button";
 import { useDisclosure } from "@chakra-ui/hooks";
 import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
-import { DesktopNav } from "./DesktopNav";
 import { Collapse } from "@chakra-ui/transition";
 import { BsApple } from "react-icons/bs";
 import { Icon } from "@chakra-ui/icon";
@@ -61,9 +60,6 @@ export const Header: VFC = () => {
             >
               <Icon as={BsApple} _hover={{ opacity: "0.8" }} w={8} h={8} />
             </Text>
-            <Flex display={{ base: "none", md: "flex" }} ml={10}>
-              <DesktopNav />
-            </Flex>
           </Flex>
 
           <Flex

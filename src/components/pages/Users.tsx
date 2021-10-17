@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const DesktopSubNav = () => {
+export const Users = () => {
   return (
     <div>
       
