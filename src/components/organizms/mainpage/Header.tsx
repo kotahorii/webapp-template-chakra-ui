@@ -1,6 +1,6 @@
 import { VFC } from "react";
 import { useNavigate } from "react-router";
-import { Box, Flex, Text } from "@chakra-ui/layout";
+import { Box, Flex, Stack, Text } from "@chakra-ui/layout";
 import { IconButton } from "@chakra-ui/button";
 import { useDisclosure } from "@chakra-ui/hooks";
 import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
@@ -9,6 +9,9 @@ import { BsApple } from "react-icons/bs";
 import { Icon } from "@chakra-ui/icon";
 import { PopWithPhoto } from "../../molecules/PopWithPhoto";
 import styles from "./Header.module.css";
+import { useAppDispatch, useAppSelector } from "../../../app/hooks";
+import { selectIsOpenPost } from "../../../features/postSlice";
+import { PostIcon } from "../../molecules/postIcons/PostIcon";
 
 export const Header: VFC = () => {
   const navigate = useNavigate();
@@ -62,15 +65,16 @@ export const Header: VFC = () => {
             </Text>
           </Flex>
 
-          <Flex
+          <Stack
             justify="flex-end"
             flex={{ base: 1, md: 0 }}
             direction="row"
-            spacing={6}
+            spacing={4}
             align="center"
           >
+            <PostIcon />
             <PopWithPhoto />
-          </Flex>
+          </Stack>
         </Flex>
 
         <Collapse in={isOpen} animateOpacity></Collapse>

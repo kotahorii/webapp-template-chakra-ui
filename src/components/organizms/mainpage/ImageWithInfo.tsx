@@ -1,5 +1,5 @@
 import { Image } from "@chakra-ui/image";
-import { Box, Flex, Grid, Text, WrapItem } from "@chakra-ui/layout";
+import { Box, Text, WrapItem } from "@chakra-ui/layout";
 import { Stack } from "@chakra-ui/react";
 import React from "react";
 

@@ -12,8 +12,6 @@ export const mapSlice = createSlice({
   reducers: {},
 });
 
-export const {} = mapSlice.actions;
-
 export const selectPositionData = (state: RootState) => state.map.positionData;
 
 export default mapSlice.reducer;
