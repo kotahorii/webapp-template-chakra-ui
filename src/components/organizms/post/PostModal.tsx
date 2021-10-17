@@ -19,6 +19,7 @@ import { Flex, Stack, Text } from "@chakra-ui/layout";
 import { resetIsOpenPost, selectIsOpenPost } from "../../../features/postSlice";
 import { Textarea } from "@chakra-ui/textarea";
 import { BsCardImage } from "react-icons/bs";
+import { BsFillImageFill } from "react-icons/bs";
 import Icon from "@chakra-ui/icon";
 
 export const PostModal: VFC = () => {
@@ -55,6 +56,10 @@ export const PostModal: VFC = () => {
     setValue("title", "");
     setValue("text", "");
   };
+
+  const filetypeList = ["jpg", "jpeg", "JPEG", "JPG", "png", "PNG"];
+  const fileType = filetypeList.indexOf(image?.name.split(".")[1]!);
+  const invalidType = fileType === -1;
 
   return (
     <>
@@ -110,8 +115,8 @@ export const PostModal: VFC = () => {
                       px="3"
                     >
                       <Icon
-                        color="gray.600"
-                        as={BsCardImage}
+                        as={image ? BsFillImageFill : BsCardImage}
+                        color="blue.500"
                         cursor="pointer"
                         fontSize="2xl"
                         onClick={handlerInputPicture}
@@ -120,6 +125,7 @@ export const PostModal: VFC = () => {
                     </Stack>
                     <Flex>
                       <Button
+                        disabled={invalidType || !image}
                         isLoading={isSubmitting}
                         type="submit"
                         color="white"
