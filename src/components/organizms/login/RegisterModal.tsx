@@ -39,12 +39,15 @@ export const RegisterModal: VFC = () => {
   const {
     register,
     handleSubmit,
+    setValue,
     formState: { errors, isSubmitting },
   } = useForm<IFormInput>({ resolver: yupResolver(schema) });
 
   const onSubmit: SubmitHandler<IFormInput> = (data) => {
     localStorage.setItem("username", data.username);
     localStorage.setItem("password", data.password);
+    setValue("username", "");
+    setValue("password", "");
     dispatch(resetIsOpenRegister());
     navigate("/posts");
   };
@@ -60,7 +63,7 @@ export const RegisterModal: VFC = () => {
         onClose={() => dispatch(resetIsOpenRegister())}
       >
         <ModalOverlay />
-        <ModalContent px="8" pb="8">
+        <ModalContent px="8" pb="8" bg="gray.50">
           <ModalHeader textAlign="center">Register</ModalHeader>
           <ModalBody>
             <form onSubmit={handleSubmit(onSubmit)}>

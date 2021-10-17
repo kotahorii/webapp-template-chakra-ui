@@ -39,12 +39,15 @@ export const LoginModal: VFC = () => {
   const {
     register,
     handleSubmit,
+    setValue,
     formState: { errors, isSubmitting },
   } = useForm<IFormInput>({ resolver: yupResolver(schema) });
 
   const onSubmit: SubmitHandler<IFormInput> = (data) => {
     localStorage.setItem("username", data.username);
     localStorage.setItem("password", data.password);
+    setValue("username", "");
+    setValue("password", "");
     dispatch(resetIsOpenLogin());
     navigate("/posts");
   };
@@ -56,21 +59,29 @@ export const LoginModal: VFC = () => {
     <>
       <Modal isOpen={isOpenLogin} onClose={() => dispatch(resetIsOpenLogin())}>
         <ModalOverlay />
-        <ModalContent px="8" pb="8">
+        <ModalContent px="8" pb="8" bg="gray.50">
           <ModalHeader textAlign="center">Login</ModalHeader>
           <ModalBody>
             <form onSubmit={handleSubmit(onSubmit)}>
               <Stack spacing="4">
                 <FormControl>
                   <FormLabel>Username</FormLabel>
-                  <Input variant='flushed' type="text" {...register("username")} />
+                  <Input
+                    variant="flushed"
+                    type="text"
+                    {...register("username")}
+                  />
                   <Text pt="2" color="pink.400">
                     {errors.username?.message}
                   </Text>
                 </FormControl>
                 <FormControl>
                   <FormLabel>Password</FormLabel>
-                  <Input variant='flushed' type="password" {...register("password")} />
+                  <Input
+                    variant="flushed"
+                    type="password"
+                    {...register("password")}
+                  />
                   <Text pt="2" color="pink.400">
                     {errors.password?.message}
                   </Text>

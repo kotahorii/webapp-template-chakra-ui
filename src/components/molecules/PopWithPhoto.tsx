@@ -13,6 +13,7 @@ import {
   setIsOpenLogin,
   setIsOpenRegister,
 } from "../../features/loginSlice";
+import { setIsOpenPost } from "../../features/postSlice";
 
 export const PopWithPhoto: VFC = () => {
   const username: string = localStorage.username;
@@ -53,7 +54,7 @@ export const PopWithPhoto: VFC = () => {
     {
       text: "投稿する",
       onClick: () => {
-        
+        dispatch(setIsOpenPost());
       },
     },
     {
